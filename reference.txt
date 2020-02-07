@@ -1,3 +1,5 @@
+Đã đẩy lên github
+
 https://expressjs.com/en/4x/api.html#express.json
 
 Hàm hướng về trang : res.redirect("/index");
