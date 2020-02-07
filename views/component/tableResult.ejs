@@ -17,7 +17,9 @@
                 <th><%= item.name%></th>
                 <th><%= item.view%></th>
                 <th>
-                    <button class="update" itemID="">UPDATE</button>
+                    <a href="/admin/updateItem?id=<%= item.id%>">
+                        <button>UPDATE</button>
+                    </a>
                 </th>
                 <th>
                     <form action="/admin/deleteItem" method="POST">

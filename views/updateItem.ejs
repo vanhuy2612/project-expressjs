@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body style="color : black">
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% include ./component/header %>
+    <div>
+        <div class="container" id="title">
+            <div class="row">
+                <!-- Form update or add item : -->
+                <% include ./component/formUpdateItem%>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

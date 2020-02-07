@@ -1,0 +1,56 @@
+<div id="formUpdateItem">
+    <form action="/admin/updateItem" method="POST">
+        <div class="col col-md-12" style="text-align: center; margin-top: 30px; margin-bottom: 30px">
+            <h2>CẬP NHẬT SẢN PHẨM</h2>
+        </div>
+        <%item.forEach(function(item){%>
+        <div class="container">
+            <div class="row" style="color: black; text-align: left; margin-left: 150px">
+                <div class="col col-md-8">
+                    ID sản phẩm
+                    <Label><%= item.id%></Label> <br>
+                    Tên sản phẩm
+                    <input type="text" value="<%= item.name%>" name="name"
+                        style="border: solid 1px black; border-radius: 10px; width: 300px; hejght: 40px"> <br /> <br />
+                    Giá thành sản phẩm
+                    <input type="number" value="<%= item.price%>" name="price"
+                        style="border: solid 1px black; border-radius: 10px; width: 300px; hejght: 40px"> <br /> <br />
+                    Số lượng
+                    <input type="number" value="<%= item.quantity%>" name="quantity"
+                        style="border: solid 1px black; border-radius: 10px; width: 300px; hejght: 40px"> <br /> <br />
+                    Category
+                    <select name=category style="border: solid 1px black; border-radius: 10px">
+                        <% category.forEach(function(category){ %>
+                        <option value="<%= category.id%>"><%= category.name%></option>
+                        <% }) %>
+                    </select> <br /><br />
+                    Classifying
+                    <% classifying.forEach(function(classifying){ %>
+                    <input type="text" value="<%= classifying.name%>" name="classifying"
+                        style="border: solid 1px black; border-radius: 10px; width: 300px; hejght: 40px"> <br /> <br />
+
+                    <% }) %>
+                </div>
+                <div class="col col-md-4">
+                    Url Image:
+                    <input type="text" value="<%= item.url%>" name="urlImage">
+                </div>
+                <div class="col col-md-12">
+                    <p>Mô tả sản phầm</p>
+                    <textarea rows="4" cols="100%" style="border: solid 1px black; border-radius: 10px" name="des">
+                        <%= item.des%>                    
+                    </textarea>
+                    <br /> <br />
+                </div>
+            </div>
+        </div>
+        <div class="col col-md-12" style="text-align: center">
+            <button name="itemID" value="<%= item.id%>" type="submit" class="btn btn-secondary" style="border-radius: 20px; font-size: 30px">
+                UPDATE
+            </button>
+            <br /> <br />
+        </div>
+        <%})%>
+
+    </form>
+</div>
