@@ -13,4 +13,4 @@ AJAX : (trong file index.ejs,index.js)
     + cách báo 1 ajax lên server như trong ajax jquery.
     + cách nhận thông báo dùng router.post(...)
     + gửi kết quả ta dùng res.send(...), res.json(...)...
-    
+    (Chú ý : nếu thấy cú pháp đúng mà ko ra kết quả thì có thể là do link jquery sai)
