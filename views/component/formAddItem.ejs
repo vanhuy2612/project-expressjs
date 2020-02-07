@@ -1,5 +1,5 @@
 <div id="formAddItem">
-    <form action="/admin/additem" method="POST">
+    <form action="/admin/addItem" method="POST">
         <div class="col col-md-12" style="text-align: center; margin-top: 30px; margin-bottom: 30px">
             <h2>THÊM SẢN PHẨM</h2>
         </div>
@@ -8,31 +8,31 @@
             <div class="row" style="color: black; text-align: left; margin-left: 150px">
                 <div class="col col-md-8">
                     Tên sản phẩm
-                    <input type="text" value="" name="name" id="name"
+                    <input type="text" value="" name="name"
                         style="border: solid 1px black; border-radius: 10px; width: 300px; hejght: 40px"> <br /> <br />
                     Giá thành sản phẩm
-                    <input type="number" value="" name="price" id="price"
+                    <input type="number" value="" name="price" 
                         style="border: solid 1px black; border-radius: 10px; width: 300px; hejght: 40px"> <br /> <br />
                     Số lượng
-                    <input type="number" value="" name="quantity" id="quantity"
+                    <input type="number" value="" name="quantity" 
                         style="border: solid 1px black; border-radius: 10px; width: 300px; hejght: 40px"> <br /> <br />
                     Category
-                    <select name=category style="border: solid 1px black; border-radius: 10px" id="selectCategory">
+                    <select name=category style="border: solid 1px black; border-radius: 10px" >
                         <% category.forEach(function(category){ %>
                         <option value="<%=category.id%>"><%= category.name%></option>
                         <% }) %>
                     </select> <br /><br />
                     Classifying
-                    <input type="text" value="" name="classifying" id="txtClassifying"
+                    <input type="text" value="" name="classifying"
                         style="border: solid 1px black; border-radius: 10px; width: 300px; hejght: 40px"> <br /> <br />
                 </div>
                 <div class="col col-md-4">
                     Url Image:
-                    <input type="text" value="" name="url-image" id="image">
+                    <input type="text" value="" name="urlImage">
                 </div>
                 <div class="col col-md-12">
                     <p>Mô tả sản phầm</p>
-                    <textarea rows="4" cols="100%" style="border: solid 1px black; border-radius: 10px" id="des">
+                    <textarea rows="4" cols="100%" style="border: solid 1px black; border-radius: 10px" name="des">
                                     </textarea>
                     <br /> <br />
                 </div>

@@ -1,4 +1,8 @@
+table, th, td {
+  border: 1px solid black;
+}
 body{
+  color:black;
   background-color: black;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
