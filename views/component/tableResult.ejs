@@ -1,0 +1,31 @@
+<!-- Show list item-------------------------------------------------------------------- -->
+<div class="container">
+    <table style="color: black;border: black 1px;">
+        <tr>
+            <th>STT</th>
+            <th>id</th>
+            <th>tên sản phẩm</th>
+            <th>view</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+        <% var countItem = 1;%>
+        <% item.forEach(function(item){ %>
+            <tr>
+                <th><%= countItem%></th>
+                <th><%= item.id%></th>
+                <th><%= item.name%></th>
+                <th><%= item.view%></th>
+                <th>
+                    <button class="update" itemID="">UPDATE</button>
+                </th>
+                <th>
+                    <form action="/admin/deleteItem" method="POST">
+                        <button type="submit" name="itemID" value="<%= item.id%>">DELETE</button>
+                    </form>
+                </th>
+            </tr>
+            <% countItem++;%>
+        <% }) %>
+    </table>
+</div>
