@@ -34,5 +34,11 @@ router.get('/', function(req,res,next){
 		});
 	});
 });
-
+// handle ajax from index.ejs
+router.post('/handle',function(req,res){
+	var string = req.body.name;
+	console.log(string);
+	string = "Chào bạn, "+string;
+	res.send(string);
+});
 module.exports = router;

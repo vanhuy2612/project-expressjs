@@ -9,3 +9,8 @@ Hàm hướng về trang : res.redirect("/index");
     + Function res.redirect("link") is used to go to Page we need.
     + req.body.<name> : access to form html
     + req.query.<name> : access value of variable in (thanh địa chỉ).
+AJAX : (trong file index.ejs,index.js)
+    + cách báo 1 ajax lên server như trong ajax jquery.
+    + cách nhận thông báo dùng router.post(...)
+    + gửi kết quả ta dùng res.send(...), res.json(...)...
+    
