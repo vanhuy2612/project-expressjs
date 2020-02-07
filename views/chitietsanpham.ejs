@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% include ./component/header %>
+    <div>
+        <div class="container" id="title">
+            <div class="row">
+                <% include ./component/narbar %>
+                
+                <!-- Chi tiết 1 sản phẩm : -->
+                <% item.forEach(function(item){ %>
+                    <div style="margin : 50px auto;color: black;">
+                        <div class="row">
+                            <div class="col-6">
+                                <img width="100%" height="auto" src="<%= item.url %>" alt="<%= item.name %>">
+                            </div>
+                            <div class="col-6">
+                                <div style="font-size: 40px;font-family:  Times New Roman;"><%= item.price%></div>
+                                <div><%- item.des %></div>
+    
+                                <div>
+                                    Giá : <input class="price" value="<%= item.price %>" type="text" /><br> 
+                                </div> 
+                                <div>
+                                    Số lượng : <input class="quantity" value="" type="text" />
+                                </div>
+                                <button class="btn btn-success buy" itemID="<%= item.id %>">Mua</button>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

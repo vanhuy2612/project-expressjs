@@ -1,0 +1,9 @@
+https://expressjs.com/en/4x/api.html#express.json
+
+Hàm hướng về trang : res.redirect("/index");
+
+Đăng nhập : 
+    + In Router file, it has 2 method (get, post), 
+    + Function res.redirect("link") is used to go to Page we need.
+    + req.body.<name> : access to form html
+    + req.query.<name> : access value of variable in (thanh địa chỉ).

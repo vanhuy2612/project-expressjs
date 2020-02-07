@@ -1,0 +1,19 @@
+
+<div class="col col-md-3" id="menu">
+    <span class="fa fa-list" id="icon-menu"></span>
+    <span style="font-size: 20px;">sản phẩm</span> <br /> <br />
+                        <!-- Bắt đầu dropdown sản phầm -->
+    <div class="dropdown" style="float: inline-end;font-size:20px;">
+        <p class="category"></p>
+    </div>
+    <% category.forEach(function(category){ %>
+        <div class="dropdown" style="float: inline-end;font-size:20px;">
+            <a href="/category?id=<%= category.id %>">
+                <p class="category"><%=  category.name %></p>
+            </a>
+            <div class="dropdown-content-product">
+                
+            </div>
+        </div><hr><p></p>
+    <% }) %>
+</div>

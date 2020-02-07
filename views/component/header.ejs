@@ -1,0 +1,96 @@
+<div id="information">
+    <div class="row" style="background-color: #423C3C;color:white">
+        <div class="col col-md-4">
+            SDT: 032 660 9183 hoặc 0362 091 356
+        </div>
+        <div class="col col-md-4">
+            Email: vanhuy2612@gmail.com
+        </div>
+        <div class="col col-md-4">
+            FB: http://facebook.com/HuyKa.s268
+        </div>
+    </div>
+    <!-- NAVBAR  -->
+    <div id="navbar">
+        <div class="row">
+            <div class="col col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <img src="/images/logo.png" id="img-logo" />
+                    <!-- Form search -->
+                    <form action="/search" method="POST">
+                        <div class="form-inline my-2 my-md-0">
+                            <input class="form-control mr-sm-2 searchText" type="search" placeholder="Search"
+                                aria-label="Search" value="" name="search">
+                            <button class="search btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </div>
+                    </form>
+                    
+                    <!-- nếu Admin đăng nhập thì sẽ hiển thị mục đi vào giao diện quản lý -->
+                    <% if( loggedin ) { %>
+                        <!-- User đăng nhập thành công -->
+                        <div id="login" class="col col-md-8 dropdown" style="float: right;">
+                            <% if(username = 'admin'){%>
+                                <a href="/admin" class="fas fa-user" id="icon-login">Manage</a>    
+                            <% } %>
+                            <a href="#" class="fas fa-user" id="icon-login"><%= username%></a>
+                            <div class="dropdown-content" style="right:0;">
+                                <!-- Form logout -->
+                                <form action="/login/logout" method="POST">
+                                    <button type="submit" class="btn btn-primary button">
+                                        Thoát
+                                    </button>
+                                </form>                              
+                                <p></p>
+                            </div>
+                        </div>
+                    <% } else { %>
+                        <!-- User chưa đăng nhập -->
+                        <div id="login" class="col col-md-8 dropdown" style="float: right;">
+                            <a href="#" class="fas fa-user" id="icon-login">Đăng nhập</a>
+                            <div class="dropdown-content" style="right:0;">
+                                <a href="/login">
+                                    <button type="button" class="btn btn-primary button">
+                                        Đăng nhập
+                                    </button>
+                                </a>
+                                <p></p>
+                                <a href="/register">
+                                    <button type="button" class="btn btn-primary button">
+                                        Tạo tài khoản
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    <% } %>                    
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- END -->
+    <script>
+        $(document).ready(function () {
+            $('.logout').click(function () {
+                $.ajax({
+                    url: './Controller/userController.php',
+                    type: 'post',
+                    dataType: 'text',
+                    data: { REQUEST: 'logout' },
+                    success: function (data) {
+                        console.log(data);
+                    }
+                });
+            });
+            $('.search').click(function () {
+                var TEXT = $('.searchText').val();
+                $.ajax({
+                    url: './page/Search.php',
+                    type: 'post',
+                    dataType: 'text',
+                    data: { text: TEXT },
+                    success: function (data) {
+                        $('#content').html(data);
+                    }
+                });
+            });
+        });
+    </script>

@@ -1,0 +1,18 @@
+<div class="col col-md-4 col-col-sm-12 col-col-xs-12" style="background-color: #C3BFBF;border-radius: 10px">
+	<marquee behavior="" direction="">
+		<div style="font-size: 40px;font-family: 'Times New Roman' 'Times' serif;">Sản phẩm xem nhiều nhất</div>
+	</marquee>
+	<hr>
+	<%topview.forEach(function(topview){ %>
+	<div class="card" style="width: 250px;border-radius: 250px;margin: 10px auto;">
+		<img class="item" src="<%= topview.url%>" class="card-img-top" alt="<%= topview.name%>" width="250px"
+			height="300px" style="border-radius: 250px">
+		<div class="card-body">
+			<a href="/chitietsanpham?id=<%= topview.id%>">
+				<h5 class="card-title"><%= topview.name%></h5>
+			</a>
+		</div>
+	</div>
+	<hr>
+	<% })%>
+</div>
