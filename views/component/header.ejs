@@ -29,7 +29,7 @@
                     <% if( loggedin ) { %>
                         <!-- User đăng nhập thành công -->
                         <div id="login" class="col col-md-8 dropdown" style="float: right;">
-                            <% if(username = 'admin'){%>
+                            <% if(username == 'admin'){%>
                                 <a href="/admin" class="fas fa-user" id="icon-login">Manage</a>    
                             <% } %>
                             <a href="#" class="fas fa-user" id="icon-login"><%= username%></a>

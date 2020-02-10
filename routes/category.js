@@ -9,7 +9,6 @@ const con = mysql.createConnection({
     multipleStatements : true
 });
 con.connect(function(err){
-	console.log("category.js connected to database.");
 });
 /* GET item page. */
 router.get('/', function(req, res, next) {

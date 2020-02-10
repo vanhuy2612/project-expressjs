@@ -20,7 +20,6 @@ router.get('/', function(req,res,next){
 		multipleStatements : true
 	})
 	con.connect(function(err){
-		console.log("index.js connected to database.");
 	});
 	con.query(query, function(err,result){// prepared statement
 		res.render('index', { 

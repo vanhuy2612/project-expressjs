@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var { check , validationResults } = require('express-validator'); // validate
 var mysql = require('mysql');
 
 var indexRouter = require('./routes/index');
@@ -12,7 +13,7 @@ var loginRouter = require('./routes/login');
 var categoryRouter = require('./routes/category');
 var chitietsanphamRouter = require('./routes/chitietsanpham');
 var adminRouter = require('./routes/admin');
-
+var registerRouter = require('./routes/register');
 var app = express();
 
 // view engine setup
@@ -30,12 +31,14 @@ app.use(session({ // Session login
   saveUninitialized : true
 }));
 
+
 app.use('/', indexRouter);
 app.use('/search', searchRouter);
 app.use('/login', loginRouter);
 app.use('/category', categoryRouter);
 app.use('/chitietsanpham', chitietsanphamRouter);
 app.use('/admin',adminRouter);
+app.use('/register',registerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
