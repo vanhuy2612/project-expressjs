@@ -15,7 +15,10 @@ router.get("/",function(req,res,next) {
 // handle register : 
 router.post('/',[
     check('username','Invalid username, least 5 character.').isLength({min:5}),
-    check('password','Invalid password').isLength({min : 5})
+    check('password','Invalid password').isLength({min : 5}),
+    check('confirmPassword').custom( (val,{req}) => {
+        if(val != req.body.password ) throw new Error('Password confirm doesnt match password');
+    })
 ], function(req,res){
     var errors = validationResult(req).array(); // Chuyển thành array để xử lý !
     req.session.errors = errors;

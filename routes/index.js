@@ -6,12 +6,6 @@ var mysql = require('mysql');
 
 /* GET home page. */
 router.get('/', function(req,res,next){
-	var getCategoryQuery = 'SELECT * FROM tblcategory;';
-	var getAllItemQuery = 'SELECT * FROM tblitem;';
-	var getTopSellerQuery = 'select tblitem.id as id,tblitem.name as name,tblitem.price as price,tblitem.quantity as quantity,tblitem.des as des,tblitem.branchID as branchID,tblitem.view as view,tblitem.url as url from tblitem INNER join tblbooking ON tblitem.id=tblbooking.itemID GROUP BY tblitem.id order by sum(tblbooking.quantity) desc LIMIT 4;';
-	var getTopViewQuery = 'select * from tblitem order by view desc limit 4;';
-	var query = getCategoryQuery + getAllItemQuery + getTopSellerQuery + getTopViewQuery;
-
 	var con = mysql.createConnection({
 		user : 'root',
 		password : '',
@@ -21,6 +15,14 @@ router.get('/', function(req,res,next){
 	})
 	con.connect(function(err){
 	});
+	
+	var getCategoryQuery = 'SELECT * FROM tblcategory;';
+	var getAllItemQuery = 'SELECT * FROM tblitem;';
+	var getTopSellerQuery = 'select tblitem.id as id,tblitem.name as name,tblitem.price as price,tblitem.quantity as quantity,tblitem.des as des,tblitem.branchID as branchID,tblitem.view as view,tblitem.url as url from tblitem INNER join tblbooking ON tblitem.id=tblbooking.itemID GROUP BY tblitem.id order by sum(tblbooking.quantity) desc LIMIT 4;';
+	var getTopViewQuery = 'select * from tblitem order by view desc limit 4;';
+	var query = getCategoryQuery + getAllItemQuery + getTopSellerQuery + getTopViewQuery;
+
+	
 	con.query(query, function(err,result){// prepared statement
 		res.render('index', { 
 			title: 'Home page',
