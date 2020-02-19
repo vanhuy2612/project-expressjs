@@ -1,0 +1,106 @@
+body{
+    background-color: black;
+}
+#img-logo{
+    width: 100px;
+    height: 50px;
+    margin-right: 20px;
+}
+#information{
+    background-color: blue;
+    height: 50px;
+    text-align: center;
+    color: #ffffff;
+}
+#footer{
+    background-color: white;
+    color: black;
+    margin-top: 50px;
+    text-align: left;
+}
+
+    /* ............................................CSS navbar and dropdown đăng nhập................................... */
+#navber{
+    text-align: center;
+}
+#login{
+    color: black;
+    text-align: right;
+    font-size: 20px;
+}
+#icon-login{
+    color: rgb(65, 57, 175);
+    font-size: 30px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px;
+    padding: 10px 50px;
+    z-index: 1;
+    border-radius: 20px;
+}
+.button{
+    width: 150px;
+    border-radius: 20px;
+}
+    /* .................................................END..........................................................  */
+
+    /* ..............................................CSS title ....................................................... */
+#title{
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+#menu{
+    /* background-color: white; */
+    color: black;
+    border-right: solid 1px black;
+}
+#product{
+    /* background-color: white; */
+    color: black;
+}
+#icon-menu{
+    color: blue;
+    font-size: 25px;
+    text-align: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.dropdown:hover .dropdown-content-product {
+    display: block;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.dropdown-content-product {
+    display: none;
+    /* position: absolute; */
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px;
+    padding: 10px 50px;
+    z-index: 1;
+    border-radius: 20px;
+}
+/* .....................................................END ............................................................*/
+
+/* ............................................CSS product body ....................................................... */
+#product{
+    background-color: white;
+    border-radius: 10px;
+}
+/* ....................................................END............................................................. */
